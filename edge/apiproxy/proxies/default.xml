@@ -101,7 +101,7 @@
         </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/helloWorld/v1</BasePath>
+        <BasePath>/sangeeta-helloWorld/v1</BasePath>
         <Properties/>
         <VirtualHost>edgeVhostName</VirtualHost>
     </HTTPProxyConnection>
