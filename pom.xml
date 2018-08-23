@@ -10,7 +10,6 @@
         <groupId>com.apigee.api.commons</groupId>
         <artifactId>parent-pom</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>commons-parent/pom.xml</relativePath>
     </parent>
 
     <properties>
