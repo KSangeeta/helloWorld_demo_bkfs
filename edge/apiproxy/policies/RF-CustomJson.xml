@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-CustomJson">
+    <DisplayName>RF-CustomJson</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+                { 
+                    "status" : "@flow.edge.error.status#",
+                    "message": "@flow.edge.error.message#",
+                    "info" : "@flow.edge.error.info#"
+                }
+            </Payload>
+            <StatusCode>{flow.edge.error.code}</StatusCode>
+            <ReasonPhrase>{flow.edge.error.reason}</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-setValidationErrorVariables">
+    <DisplayName>AM-setValidationErrorVariables</DisplayName>
+    <AssignVariable>
+        <Name>flow.edge.error.code</Name>
+        <Value>500</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.info</Name>
+        <Value>Provide URL </Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.status</Name>
+        <Value>500</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.reason</Name>
+        <Value>Invalid PayLoad</Value>
+    </AssignVariable>
+</AssignMessage>

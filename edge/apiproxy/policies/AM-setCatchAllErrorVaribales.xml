@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-setCatchAllErrorVaribales">
+    <DisplayName>AM-setCatchAllErrorVaribales</DisplayName>
+    <AssignVariable>
+        <Name>flow.edge.error.code</Name>
+        <Value>404</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.message</Name>
+        <Value>Resource not found</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.info</Name>
+        <Value>Provide URL </Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.status</Name>
+        <Value>404</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.reason</Name>
+        <Value>Internal Server Error</Value>
+    </AssignVariable>
+</AssignMessage>

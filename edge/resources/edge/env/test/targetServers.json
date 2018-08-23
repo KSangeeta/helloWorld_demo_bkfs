@@ -1,0 +1,12 @@
+[
+
+  {
+    "name": "demo-helloWorld-v1-mockTarget",
+    "host": "mocktarget.apigee.net",
+    "isEnabled": true,
+    "port": 443,
+    "sSLInfo": {
+      "enabled": "true"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="4" name="demo-helloWorld-v1">
+    <Basepaths>/helloWorld/v1</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <Description></Description>
+    <DisplayName>demo-helloWorld-v1</DisplayName>
+    <Policies>
+        <Policy>AM-SetDefaultErrorVariables</Policy>
+        <Policy>AM-SetExpiredAccessTokenErrorVariables</Policy>
+        <Policy>AM-SetInvalidAccessTokenErrorVariables</Policy>
+        <Policy>AM-setCatchAllErrorVaribales</Policy>
+        <Policy>AM-setSpikeArrestErrorVariables</Policy>
+        <Policy>AM-setValidationErrorVariables</Policy>
+        <Policy>AM-togglePathSuffix</Policy>
+        <Policy>JS-jsonValidation</Policy>
+        <Policy>OAuth-v20-VerifyAccessToken</Policy>
+        <Policy>RF-CatchAll</Policy>
+        <Policy>RF-CustomJson</Policy>
+        <Policy>RF-validationError</Policy>
+        <Policy>RS-cache</Policy>
+        <Policy>SA-spikeArrest</Policy>
+        <Policy>TP-jsonContentProtection</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JS-jsonValidation.js</Resource>
+        <Resource>jsc://JS-togglePathSuffix.js</Resource>
+        <Resource>jsc://tv4.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+    <validate>false</validate>
+</APIProxy>

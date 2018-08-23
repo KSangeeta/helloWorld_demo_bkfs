@@ -1,0 +1,15 @@
+[
+    {
+        "entry": [
+            {
+                "name": "username",
+                "value": "hello@sample.com"
+            },
+            {
+                "name": "password",
+                "value": "helloworld"
+            }
+        ],
+        "name": "demo-helloWorld-v1-kvm-sample_credentials"
+    }
+]

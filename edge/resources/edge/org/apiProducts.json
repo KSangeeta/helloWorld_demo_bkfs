@@ -1,0 +1,25 @@
+[
+    {
+        "name": "sampleAPIProduct",
+        "apiResources": [],
+        "approvalType": "auto",
+        "attributes": [
+            {
+                "name": "description",
+                "value": "sampleAPIProduct"
+            }
+        ],
+        "description": "sampleAPIProduct",
+        "displayName": "sampleAPIProduct",
+        "environments": [
+            "edge_env"
+        ],
+        "proxies": [
+            "demo-helloWorld-v1"
+        ],
+        "quota": "10000",
+        "quotaInterval": "1",
+        "quotaTimeUnit": "month",
+        "scopes": []
+    } 
+]

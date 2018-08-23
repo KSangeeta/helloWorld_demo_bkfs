@@ -1,0 +1,4 @@
+{
+    "domain": "demo-test.apigee.net",
+    "basepath": "/oauth/client_credential"
+}

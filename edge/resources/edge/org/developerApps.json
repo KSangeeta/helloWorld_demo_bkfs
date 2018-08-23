@@ -1,0 +1,12 @@
+{
+    "hworld@bkfs.com": [
+        {
+            "apiProducts": [
+                "sampleAPIProduct"
+            ],
+            "callbackUrl": "",
+            "name": "sampleAPIApp",
+            "scopes": []
+        }
+    ]
+}

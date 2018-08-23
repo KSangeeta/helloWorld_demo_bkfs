@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="Oauth errors">
+            <Condition>(oauthV2.OAuth-v20-VerifyAccessToken.failed = "true")</Condition>
+            <Step>
+                <Condition>(fault.name = "access_token_expired")</Condition>
+                <Name>AM-SetExpiredAccessTokenErrorVariables</Name>
+            </Step>
+            <Step>
+                <Condition>(fault.name = "invalid_access_token")</Condition>
+                <Name>AM-SetInvalidAccessTokenErrorVariables</Name>
+            </Step>
+        </FaultRule>
+        <FaultRule name="catch all flow error">
+            <Condition>(fault.name = "RaiseFault") and (raisefault.RF-CatchAll.failed = "true")</Condition>
+            <Step>
+                <Name>AM-setCatchAllErrorVaribales</Name>
+            </Step>
+        </FaultRule>
+        <FaultRule name="catch validation error">
+            <Condition>(fault.name = "RaiseFault") and (raisefault.RF-validationError.failed = "true")</Condition>
+            <Step>
+                <Name>AM-setValidationErrorVariables</Name>
+            </Step>
+        </FaultRule>
+        <FaultRule name="spike arrest error">
+            <Condition>(ratelimit.SA-spikeArrest.failed = "true")</Condition>
+            <Step>
+                <Condition>(fault.name Matches "SpikeArrestViolation")</Condition>
+                <Name>AM-setSpikeArrestErrorVariables</Name>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <DefaultFaultRule>
+        <AlwaysEnforce>true</AlwaysEnforce>
+        <!--Implement a step here to log errors-->
+        <Step>
+            <Name>AM-SetDefaultErrorVariables</Name>
+            <Condition>(flow.edge.error.code is null)</Condition>
+        </Step>
+        <Step>
+            <Name>RF-CustomJson</Name>
+        </Step>
+    </DefaultFaultRule>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>OAuth-v20-VerifyAccessToken</Name>
+            </Step>
+            <Step>
+                <Name>RC-cache</Name>
+            </Step>
+            <Step>
+                <Name>SA-spikeArrest</Name>
+            </Step>
+            <Step>
+                <Condition>(request.verb = "POST")</Condition>
+                <Name>TP-jsonContentProtection</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Flow-GET-hello">
+            <Description/>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/hello") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Flow-POST-hello">
+            <Description/>
+            <Request>
+                <!--JSON validation for the payload-->
+                <Step>
+                    <Name>JS-jsonValidation</Name>
+                </Step>
+                <!--Raise an Error If validation fails-->
+                <Step>
+                    <Condition>(triggerFault = "true")</Condition>
+                    <Name>RF-validationError</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/hello") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Flow-Catch-All">
+            <Description>Catches all the routes referring Invalid resources</Description>
+            <Request>
+                <Step>
+                    <Name>RF-CatchAll</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>1=1</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/helloWorld/v1</BasePath>
+        <Properties/>
+        <VirtualHost>edgeVhostName</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

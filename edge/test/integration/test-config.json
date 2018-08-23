@@ -1,0 +1,8 @@
+{
+	"helloWorld": {
+		"domain": "demo-test.apigee.net",
+		"basepath": "/helloWorld/v1",
+		"product":"sampleAPIProduct",
+		"app":"sampleAPIApp"
+	}
+}

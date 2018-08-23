@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-SetInvalidAccessTokenErrorVariables">
+    <DisplayName>AM-SetInvalidAccessTokenErrorVariables</DisplayName>
+    <AssignVariable>
+        <Name>flow.edge.error.code</Name>
+        <Value>401</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.message</Name>
+        <Value>access token is invalid</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.info</Name>
+        <Value>Provide URL</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.status</Name>
+        <Value>401</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.edge.error.reason</Name>
+        <Value>Unauthorized</Value>
+    </AssignVariable>
+</AssignMessage>
