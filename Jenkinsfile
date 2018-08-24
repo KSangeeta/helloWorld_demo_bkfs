@@ -14,7 +14,16 @@ pipeline {
                 }
             }
         }
-            stage('Static Code Analysis, Unit Test and Coverage') {
+            stage('Proxy linting') {
+
+            steps {
+                dir('edge') {
+                    bat "mvn test -Pproxy-linting "
+                }
+            }
+        }
+
+        stage('Static Code Analysis, Unit Test and Coverage') {
             
                 steps {
                     dir('edge') {
