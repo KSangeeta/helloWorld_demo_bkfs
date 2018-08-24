@@ -7,11 +7,7 @@ pipeline {
         nodejs 'NodeJS'
     }
     stages {
-            stage('Clean Workspace'){
-                steps{
-                    cleanWs()
-                }
-            }
+            
             stage('Clean') {
                 steps {
                 dir('edge') {
