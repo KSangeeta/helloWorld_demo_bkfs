@@ -8,7 +8,9 @@ pipeline {
     }
     stages {
             stage('Clean Workspace'){
-                step([$class: ‘WsCleanup’])
+                steps{
+                    deleteDir()
+                }
             }
             stage('Clean') {
                 steps {
