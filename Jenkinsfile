@@ -29,7 +29,7 @@ pipeline {
 
             steps {
                 dir('edge') {
-                    bat "mvn test -Pproxy-linting > linting_output.html"
+                    bat "mvn test -Pproxy-linting"
                 }
             }
         }
