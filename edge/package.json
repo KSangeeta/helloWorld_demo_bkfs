@@ -2,6 +2,7 @@
 	"name": "demo-helloWorld-v1",
 	"version": "1.0.0",
 	"devDependencies": {
+		"apigeelint":"0.2.5",
 		"prettyjson": ">=1.1.3",
 		"apickli": "^1.6.3",
 		"cucumber": "4.2.1",
