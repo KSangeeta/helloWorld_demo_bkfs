@@ -6,6 +6,9 @@ pipeline {
         maven 'Maven'
         nodejs 'NodeJS'
     }
+    always {
+        cleanWs()
+    }
     stages {
             stage('Clean') {
                 steps {
