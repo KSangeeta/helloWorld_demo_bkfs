@@ -6,10 +6,10 @@ pipeline {
         maven 'Maven'
         nodejs 'NodeJS'
     }
-    always {
-        cleanWs()
-    }
     stages {
+            stage('Clean Workspace'){
+                step([$class: ‘WsCleanup’])
+            }
             stage('Clean') {
                 steps {
                 dir('edge') {
