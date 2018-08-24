@@ -2,17 +2,17 @@
 
 pipeline {
     agent any
-    node{
+    /*node{
         withCredentials([usernamePassword(credentialsId: 'sangeetak-eval_Edge_Creds', usernameVariable: 'Username', passwordVariable: 'Password')]) {
             // available as an env variable, but will be masked if you try to print it out any which way
             // note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
-            sh 'echo $PASSWORD'
+            sh 'echo $Password'
             // also available as a Groovy variable
-            echo USERNAME
+            echo Username
             // or inside double quotes for string interpolation
-            echo "username is $USERNAME"
+            echo "Username is $USERNAME"
         }
-    }
+    }*/
     tools {
         maven 'Maven'
         nodejs 'NodeJS'
