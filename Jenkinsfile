@@ -7,7 +7,6 @@ pipeline {
         nodejs 'NodeJS'
     }
     stages {
-            
             stage('Clean') {
                 steps {
                 dir('edge') {
