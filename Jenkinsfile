@@ -9,7 +9,7 @@ pipeline {
     stages {
             stage('Clean Workspace'){
                 steps{
-                    deleteDir()
+                    cleanWs()
                 }
             }
             stage('Clean') {
