@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
     <Description/>
-    <FaultRules>
+    <FaultRules
         <FaultRule name="Oauth errors">
             <Condition>(oauthV2.OAuth-v20-VerifyAccessToken.failed = "true")</Condition>
             <Step>
