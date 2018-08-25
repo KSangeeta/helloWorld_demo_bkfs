@@ -118,7 +118,21 @@ pipeline {
 //                }
 //            }
 //        }
-
+            stage('Proxy Linting Report') {
+                steps {
+                    dir('edge') {
+                        publishHTML(target: [
+                                allowMissing         : false,
+                                alwaysLinkToLastBuild: false,
+                                keepAll              : false,
+                                reportDir            : "target/proxy-linting-test/proxy-linting-report",
+                                reportFiles          : 'index.html',
+                                reportName           : 'HTML Report'
+                        ]
+                        )
+                    }
+                }
+            }
             stage('Coverage Test Report') {
                 steps {
                     dir('edge') {
@@ -133,6 +147,8 @@ pipeline {
                     )
                 }
             }
+
+
         }
 
 //            stage('Functional Test Report') {
