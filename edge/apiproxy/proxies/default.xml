@@ -78,7 +78,7 @@
             <Request>
                 <!--JSON validation for the payload-->
                 <Step>
-                    <Name>JS-jsonValidation</Name>
+                    <Name>JS-jsonValidation_1234</Name>
                 </Step>
                 <!--Raise an Error If validation fails-->
                 <Step>
