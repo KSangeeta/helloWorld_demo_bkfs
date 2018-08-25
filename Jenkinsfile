@@ -29,7 +29,7 @@ pipeline {
 
             steps {
                 dir('edge') {
-                    bat "mvn test -Pproxy-linting > target/proxy-linting-test/index.html"
+                    bat "mvn test -Pproxy-linting > proxy-linting-test.html"
                 }
             }
         }
@@ -125,8 +125,8 @@ pipeline {
                                 allowMissing         : false,
                                 alwaysLinkToLastBuild: false,
                                 keepAll              : false,
-                                reportDir            : "target/proxy-linting-test",
-                                reportFiles          : 'index.html',
+                                reportDir            : "./",
+                                reportFiles          : 'proxy-linting-test.html',
                                 reportName           : 'HTML Report'
                         ]
                         )
