@@ -125,8 +125,7 @@ pipeline {
                                 allowMissing         : false,
                                 alwaysLinkToLastBuild: false,
                                 keepAll              : false,
-                                reportDir            : "target/proxy-linting-test/proxy-linting-report",
-                                reportFiles          : 'index.html',
+                                reportFiles          : 'proxy-linting-report.html',
                                 reportName           : 'HTML Report'
                         ]
                         )
