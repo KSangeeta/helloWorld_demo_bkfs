@@ -48,9 +48,11 @@ pipeline {
                 steps {
                     dir('edge') {
                     println "Predeployment of Caches "
-                        withCredentials([usernameColonPassword(credentialsId: 'sangeetak-eval_Edge_Creds', variable: 'user_credentials')]) {
+                        withCredentials([usernamePassword(credentialsId: 'sangeetak-eval_Edge_Creds', passwordVariable: 'apigee_password', usernameVariable: 'apigee_user')]) {
                             bat "mvn apigee-config:caches " +
-                                    "    -Papigee -Denv=${params.apigee_env} -Dorg=${params.apigee_org} "
+                                    "    -Papigee -Denv=${params.apigee_env} -Dorg=${params.apigee_org} " +
+                                    "    -Dusername=${apigee_user} " +
+                                    "    -Dpassword=${apigee_password}"
                         }
 
                 }
